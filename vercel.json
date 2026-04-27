@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/src/index.html" },
+    { "source": "/css/(.*)", "destination": "/dist/$1" },
+    { "source": "/photo/(.*)", "destination": "/photo/$1" }
+  ]
+}
