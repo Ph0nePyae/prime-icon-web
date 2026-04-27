@@ -1,0 +1,242 @@
+{
+  "teamData": [
+    {
+      "name": "David Aris",
+      "role": "President & CEO",
+      "bio": "Leading the structural redesign of global advocacy networks through data-driven methodology and community-first infrastructure.",
+      "img": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+      "tenure": "10 Years",
+      "focus": "Global Strategy"
+    },
+    {
+      "name": "Sarah Vance",
+      "role": "Programs Director",
+      "bio": "Managing cross-border initiatives and ensuring educational resources reach decentralized communities effectively.",
+      "img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800",
+      "tenure": "8 Years",
+      "focus": "Regional Impact"
+    },
+    {
+      "name": "Ken Thorne",
+      "role": "Operations Manager",
+      "bio": "Overseeing regional logistics and maintaining direct support lines with local field leads for rapid response.",
+      "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
+      "tenure": "6 Years",
+      "focus": "Field Operations"
+    },
+    {
+      "name": "Elena Rodriguez",
+      "role": "Head of Partnerships",
+      "bio": "Building the financial architecture and institutional alliances that sustain our long-term mission.",
+      "img": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800",
+      "tenure": "5 Years",
+      "focus": "Strategic Growth"
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "Tech Infrastructure",
+      "bio": "Redefining the digital footprint of community movements through secure, accessible open-source platforms.",
+      "img": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800",
+      "tenure": "4 Years",
+      "focus": "Digital Rights"
+    },
+    {
+      "name": "Maya Patel",
+      "role": "Policy Advisor",
+      "bio": "Bridging the gap between ground-level activism and legislative policy through rigorous research and engagement.",
+      "img": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800",
+      "tenure": "7 Years",
+      "focus": "Legislative Reform"
+    },
+    {
+      "name": "James Wilson",
+      "role": "Creative Lead",
+      "bio": "Visualizing the narrative of change through impactful design and storytelling across all digital mediums.",
+      "img": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800",
+      "tenure": "3 Years",
+      "focus": "Visual Identity"
+    },
+    {
+      "name": "Sophie Lin",
+      "role": "Lead Researcher",
+      "bio": "Sophie drives our evidence-based approach, ensuring every initiative is backed by high-fidelity community data.",
+      "img": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800",
+      "tenure": "4 Years",
+      "focus": "Impact Analysis"
+    },
+    {
+      "name": "Aiden Blake",
+      "role": "Community Liaison",
+      "bio": "Building direct bridges between technical solutions and the people they serve for cultural relevance.",
+      "img": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800",
+      "tenure": "5 Years",
+      "focus": "Advocacy Outreach"
+    }
+  ],
+  "departments": [
+    {
+      "id": "01",
+      "label": "The Lens",
+      "name": "The Marketing",
+      "accentName": "department",
+      "mission": "To define and broadcast the Prime Icon ethos globally, ensuring our narrative remains authentic and resonant.",
+      "tasks": ["Brand Identity Maintenance", "Global Campaign Management", "Social Media Strategy", "Content Production"],
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800",
+      "bg": "bg-white",
+      "textColor": "text-black",
+      "accentColor": "text-blue-600",
+      "lineColor": "bg-blue-600",
+      "shadow": "brutal-shadow-blue",
+      "teams": [
+        {
+          "name": "Creative Team",
+          "about": "Visual direction, high-impact storytelling, and digital experience design.",
+          "isRecruiting": true,
+          "roles": [
+            { "title": "UI/UX Designer", "task": "Community platform interfaces.", "link": "#" },
+            { "title": "Visual Storyteller", "task": "High-impact motion design.", "link": "#" }
+          ]
+        },
+        {
+          "name": "Online Project Team",
+          "about": "Managing digital footprint, SEO campaigns, and outreach automation.",
+          "isRecruiting": false,
+          "roles": []
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "label": "The Backbone",
+      "name": "The HR",
+      "accentName": "Department",
+      "mission": "To discover, develop, and retain high-potential individuals who drive our organizational culture forward.",
+      "tasks": ["Talent Scouting", "Fiscal Accountability", "Internal Growth Frameworks", "Resource Allocation"],
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800",
+      "bg": "bg-blue-600",
+      "textColor": "text-white",
+      "accentColor": "text-white",
+      "lineColor": "bg-black",
+      "shadow": "brutal-shadow-black",
+      "teams": [
+        {
+          "name": "YET Team",
+          "about": "Youth Evaluation & Talent. Identifying high-potential community leaders.",
+          "isRecruiting": true,
+          "roles": [
+            { "title": "Talent Scout", "task": "Identifying future changemakers.", "link": "#" }
+          ]
+        },
+        {
+          "name": "HR Team",
+          "about": "Internal culture, values-alignment, and personnel support.",
+          "isRecruiting": false,
+          "roles": []
+        },
+        {
+          "name": "Finance Team",
+          "about": "Ensuring fiscal accountability and optimizing project budget allocation.",
+          "isRecruiting": true,
+          "roles": [
+            { "title": "Budget Analyst", "task": "Tracking grants and departmental spending.", "link": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "label": "Community Action",
+      "name": "Youth Engagement",
+      "accentName": "Department",
+      "mission": "To foster direct community interaction and bridge the gap between policy and grassroots action.",
+      "tasks": ["Ground-level Organizing", "Youth Summit Logistics", "Impact Assessment", "Local Partner Outreach"],
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800",
+      "bg": "bg-white",
+      "textColor": "text-black",
+      "accentColor": "text-blue-600",
+      "lineColor": "bg-amber-500",
+      "shadow": "brutal-shadow-blue",
+      "teams": [
+        {
+          "name": "Outreach Unit",
+          "about": "Field work and movement organizing.",
+          "isRecruiting": true,
+          "roles": [
+            { "title": "Community Lead", "task": "Local movement management.", "link": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "Structural Framework",
+      "name": "Policy Advocacy",
+      "accentName": "Department",
+      "mission": "To conduct deep research into systemic issues and draft governance frameworks for a better future.",
+      "tasks": ["Systemic Research", "Advocacy Drafting", "Data Analysis", "Stakeholder Briefing"],
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800",
+      "bg": "bg-blue-600",
+      "textColor": "text-white",
+      "accentColor": "text-white",
+      "lineColor": "bg-black",
+      "shadow": "brutal-shadow-black",
+      "teams": [],
+      "roles": [
+        { "title": "Policy Researcher", "task": "Analyzing systemic urban issues.", "link": "#" }
+      ]
+    },
+    {
+      "id": "05",
+      "label": "Digital Infrastructure",
+      "name": "InnoTech",
+      "mission": "To architect the digital nervous system of Prime Icon through scalable and secure technology.",
+      "tasks": ["App Architecture", "Cloud Infrastructure", "Cybersecurity", "Workflow Automation"],
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800",
+      "bg": "bg-black",
+      "textColor": "text-white",
+      "accentColor": "text-lime-400",
+      "lineColor": "bg-lime-400",
+      "shadow": "brutal-shadow-lime",
+      "teams": [
+        {
+          "name": "Engineering Squad",
+          "about": "Core development and platform scaling.",
+          "isRecruiting": true,
+          "roles": [
+            { "title": "Cloud Architect", "task": "Scaling global infra.", "link": "#" },
+            { "title": "Frontend Dev", "task": "Tailwind/Next.js systems.", "link": "#" }
+          ]
+        }
+      ]
+    }
+  ],
+  "content": {
+    "projects": [
+      { "id": 101, "status": "completed", "link": "https://t.me/yourchannel", "category": "projects", "type": "workshop", "title": "Tech Identity Summit", "subtitle": "Data Sovereignty", "date": "April 2024", "location": "Hub Alpha", "time": "09:00 - 17:00", "img": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200", "description": "A focused workshop exploring how community groups can secure their own data and manage digital identity." },
+      { "id": 102, "status": "active", "link": "https://t.me/yourchannel", "category": "projects", "type": "live", "title": "Urban Garden Initiative", "subtitle": "Sustainability", "date": "Today", "location": "Green Sector", "time": "Live Now", "img": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200", "description": "A community-led project transforming abandoned urban spaces into productive vertical gardens." },
+      { "id": 103, "status": "active", "link": "https://t.me/yourchannel", "category": "projects", "type": "hackathon", "title": "Code for Peace", "subtitle": "Civic Tech", "date": "Weekend", "location": "Innovation Lab", "time": "24 Hours", "img": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200", "description": "Solving local governance challenges through rapid software prototyping and open data." },
+      { "id": 104, "status": "active", "link": "https://t.me/yourchannel", "category": "projects", "type": "Public Speaking", "title": "Empowering Communities Through Tech", "subtitle": "Empowerment", "date": "Weekend", "location": "City Hall", "time": "9-11 AM", "img": "../photo/convention.png", "description": "Empowering communities by providing them with public speaking opportunities." }
+    ],
+    "upcoming": [],
+    "programs": [
+      { "id": 301, "status": "completed", "link": "https://docs.google.com/forms/...", "category": "programs", "type": "program", "title": "InnoTech Team", "subtitle": "Advocacy Group", "date": "Ongoing", "location": "Global", "time": "24/7", "img": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800", "description": "Our core group dedicated to advocating for better technology policy and supporting local startups." }
+    ],
+    "archive": [
+      { "id": 401, "status": "completed", "link": "", "category": "events", "type": "project", "title": "Safe Water Access", "subtitle": "Infrastructure", "date": "Dec 2023", "location": "Northern Prov.", "time": "Complete", "img": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800", "description": "Building sustainable filtration systems in the Northern Province." }
+    ]
+  },
+  "activity_log": {
+    "moments": [
+      { "title": "Receive Certificate", "img": "../photo/InAction/certi.jpg", "note": "48 hours of pure adrenaline.", "rotation": -3 },
+      { "title": "Earthquake Response", "img": "../photo/InAction/goods.jpg", "note": "Data from the source.", "rotation": 2 },
+      { "title": "Meet Up", "img": "../photo/InAction/gp.jpg", "note": "Next gen devs.", "rotation": -2 },
+      { "title": "Earthquake Response 2", "img": "../photo/InAction/groupPhotoE.jpg", "note": "Innovation wins.", "rotation": 4 },
+      { "title": "Marketing Workshop", "img": "../photo/InAction/marketing.jpg", "note": "Powering up.", "rotation": -4 },
+      { "title": "Med Support", "img": "../photo/InAction/med.jpg", "note": "48 hours of pure adrenaline.", "rotation": -3 },
+      { "title": "Field Research", "img": "../photo/InAction/nearR.jpg", "note": "Data from the source.", "rotation": 2 },
+      { "title": "Saylo", "img": "../photo/InAction/saylo.jpg", "note": "Next gen devs.", "rotation": -2 },
+      { "title": "Youth Expo", "img": "../photo/InAction/tech4.jpg", "note": "Innovation wins.", "rotation": 4 },
+      { "title": "Community Hub", "img": "../photo/InAction/tech4gp.jpg", "note": "Powering up.", "rotation": -4 }
+    ]
+  }
+}

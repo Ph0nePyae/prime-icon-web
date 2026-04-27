@@ -1,0 +1,80 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+/* Brutalist Design Tokens */
+
+.brutal-shadow-lime {
+  box-shadow: 10px 10px 0px 0px #bef264;
+}
+
+.brutal-shadow-blue {
+  box-shadow: 10px 10px 0px 0px #2563eb;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.role-card {
+  border: 2px solid black;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0px 0px black;
+}
+
+.role-card-dark {
+  border: 2px solid #bef264;
+  transition: all 0.2s ease;
+}
+
+.role-card-dark:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0px 0px #bef264;
+}
+
+.status-badge {
+  font-family: monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 2px solid black;
+  font-size: 11px;
+}
+
+.status-open {
+  background: #4ade80;
+  color: black;
+}
+
+.status-closed {
+  background: #f43f5e;
+  color: white;
+}
+
+/* 3. Prevent Layout Shifts */
+#departments-root {
+  min-height: 100vh;
+  /* Keeps the footer from jumping up before JS loads */
+}
+
+/* Sticky Sidebar logic for Desktop */
+.sticky-sidebar {
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .sticky-sidebar {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    /* Critical for sticky to work in grid */
+  }
+}

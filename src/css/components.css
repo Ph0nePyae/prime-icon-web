@@ -1,0 +1,219 @@
+@theme {
+  --color-primary: #1e40af;
+  --color-accent: #fb923c;
+  --color-bg: #f8fafc;
+  --color-text: #0f172a;
+
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Orbitron", system-ui, sans-serif;
+
+  --shadow-brutal: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-brutal-sm: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-brutal-md: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    scroll-behavior: smooth;
+    min-height: 100%;
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .font-handwritten {
+    font-family: "Permanent Marker", cursive;
+  }
+
+  .font-display2 {
+    font-family: "Bungee", cursive;
+  }
+
+  /* SPA Transitions */
+  .page-view {
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  /* for line and transparent text design */
+  .speed-lines {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.03) 10px,
+      rgba(0, 0, 0, 0.03) 11px
+    );
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px black;
+    color: transparent;
+  }
+
+  /* Scroll Reveal */
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    will-change: opacity, transform;
+    /* transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
+  }
+
+  .reveal-item.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--primary);
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .brutalist-border {
+      border: 3px solid var(--color-text);
+    }
+}
+
+@layer components {
+  .btn-blue {
+    --btn-color: var(--color-bg);
+    --text-color: var(--color-primary);
+  }
+
+  .btn-orange {
+    --btn-color: var(--color-accent);
+    --text-color: var(--color-text);
+  }
+
+  .btn-white {
+    --btn-color: var(--color-bg);
+    --text-color: var(--color-text);
+  }
+
+  .btn-dark {
+    --btn-color: var(--color-text);
+    --text-color: var(--color-bg);
+  }
+
+  .btn-neo {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: 3px solid var(--text-color);
+
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    box-shadow: 7px 7px 0px 0px var(--text-color, black);
+
+    &:hover {
+      background-color: var(--text-color);
+      color: var(--btn-color);
+      transform: translate(3px, 3px);
+      box-shadow: 0px 0px 0px 0px var(--text-color, black);
+    }
+  }
+
+  /* --- TENET GRID SYSTEM --- */
+  .tenet-panel {
+    border: 4px solid black;
+    padding: 2rem;
+    position: relative;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+  }
+
+  .tenet-panel:hover .icon-box svg {
+    stroke: white;
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  .icon-box svg {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+  }
+
+  .h1Text {
+    font-size: 2rem;
+    line-height: 110%;
+    letter-spacing: -2%;
+  }
+
+  .hover-lift {
+    /* 1. Start with a 4px offset (the "gap") */
+    transform: translate(2px, 2px);
+    /* 2. The shadow represents the "frame" it will slide into */
+    box-shadow: 0px 0px 0px 4px var(--color-bg);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .hover-lift:hover {
+    /* 3. The "Swallow": Move exactly back to 0,0 */
+    transform: translate(0, 0);
+    /* 4. The "Blend": Shadow disappears as the card fits the slot */
+    box-shadow: 4px 0px 0px 0px var(--color-bg);
+  }
+
+  .group:hover .status-bar {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .brutal-border {
+    border-width: 3px;
+    border-style: solid;
+  }
+
+  .brutal-shadow-black {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  /* The Label Style */
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: currentColor;
+  }
+}

@@ -1,0 +1,189 @@
+body {
+            /* CHANGE THIS to visible */
+            overflow-x: visible;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            /* Add this to help the sticky context */
+        }
+
+        /* Navigation Styling */
+        
+
+        .secnav-link {
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .secnav-link:hover {
+            border-bottom-color: black;
+        }
+
+        .secnav-link.active {
+            background: black;
+            color: white;
+            border-bottom-color: black;
+        }
+
+        /* Filter Tabs Styling */
+        .filter-btn {
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 2px solid black;
+            font-size: 12px;
+            transition: all 0.1s;
+            background: white;
+        }
+
+        .filter-btn:hover {
+            background: #EFF6FF;
+            /* Light blue tint */
+        }
+
+        .filter-btn.active {
+            background: black;
+            color: white;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px 0px #2563EB;
+            /* Blue Shadow */
+        }
+
+        /* close btn */
+        .panel-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 101;
+            padding: 10px 15px;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Meta Tag Redesign */
+        .meta-group {
+            display: inline-flex;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: white;
+            color: black;
+        }
+
+        .meta-label {
+            padding: 4px 8px;
+            border-right: 2px solid black;
+        }
+
+        .meta-value {
+            padding: 4px 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Card Styling */
+        .card-inner,
+        .bluecard-inner {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-container:hover .card-inner {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px black;
+        }
+
+        /* Program Section: Blue shadow on black background */
+        #sec-programs .card-container:hover .card-inner {
+            box-shadow: 10px 10px 0px 0px #2563EB;
+            /* Blue shadow */
+            transform: translate(-4px, -4px);
+        }
+
+        /* Archive Section: Black shadow on white background */
+        #sec-archive .card-container:hover .card-inner {
+            box-shadow: 10px 10px 0px 0px #000000;
+            /* Black shadow */
+            transform: translate(-4px, -4px);
+        }
+
+        .card-container:hover .bluecard-inner {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px #2563EB;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border: 4px solid black;
+            background: white;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+        }
+
+        /* Drawer Design */
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-y: auto;
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        @media (min-width: 768px) {
+            .drawer {
+                width: 600px;
+                border-left: 5px solid black;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .secnav-link {
+                /* 1. Remove the fixed padding that pushes items off-screen */
+                padding: 12px 2px !important;
+
+                /* 2. Smaller font size so long words don't overflow */
+                font-size: 10px !important;
+
+                /* 3. Allow text to wrap internally if a word is too long */
+                white-space: normal !important;
+
+                /* 4. Remove side borders if they make it too tight */
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                /* Keep them all the same height */
+            }
+
+            .secnav-link:first-child {
+                border-left: none;
+            }
+        }

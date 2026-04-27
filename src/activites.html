@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Icon - Moments & Memories</title>
+    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/pages/activites.css">
+</head>
+
+<body id="activities-page">
+
+    <!-- 2. NAVBAR -->
+    <header class="fixed top-0 w-full bg-white z-50 border-b-3 border-black glass-nav">
+        <nav class="max-w-[1440px] mx-auto pe-2 lg:px-0 h-20 flex items-center justify-between">
+
+            <a href="./index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 ms-3 bg-black flex items-center justify-center -rotate-12">
+                    <span class="text-white font-system font-black text-lg">P</span>
+                </div>
+                <div class="flex items-center gap-1 font-system font-black text-xl tracking-tighter">
+                    <span class="hover:text-orange-500">PRIME</span>
+                    <span class="text-primary">ICON</span>
+                </div>
+            </a>
+
+            <div class="flex items-center space-x-4 lg:space-x-8">
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <a href="./aboutus.html" class="nav-link">About Us</a>
+
+                    <div class="relative dropdown group">
+                        <button class="nav-link flex items-center py-7 text-primary">
+                            Explore
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7" stroke-width="3" />
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white brutalist-border min-w-[220px] shadow-brutal-sm">
+                            <a href="./event.html"
+                                class="block w-full text-left px-6 py-4 border-b-2 border-black hover:bg-blue-700 hover:text-white font-bold uppercase text-xs">Events
+                                & Programs</a>
+                            <a href="./activites.html"
+                                class="block w-full text-left px-6 py-4 bg-blue-700 text-white font-bold uppercase text-xs">Activities</a>
+                        </div>
+                    </div>
+
+                    <a href="./dpt.html" class="nav-link">Departments</a>
+                </div>
+
+                <button onclick="router.navigate('contact')"
+                    class="font-black font uppercase border-3 border-black text-text bg-accent shadow-brutal-sm rounded-md !py-2 !px-4 md:!px-6 text-[11px] lg:!text-xs whitespace-nowrap hover:-translate-1 transition-all duration-200 ease-in-out">
+                    Contact Us
+                </button>
+
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu"
+                        class="inline-flex rounded-md text-gray-700">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="3" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Nav Mobile view -->
+    <el-dialog>
+        <dialog id="mobile-menu" class="backdrop:bg-black/50 lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none flex justify-end">
+                <el-dialog-panel
+                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm border-l-4 border-black shadow-[-10px_0px_0px_0px_rgba(0,0,0,1)]">
+
+                    <div class="flex items-center justify-between pb-6 border-b-2 border-black">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-black flex items-center justify-center -rotate-12">
+                                <span class="text-white font-black text-lg">P</span>
+                            </div>
+                            <div class="flex items-center gap-1 font-black text-xl tracking-tighter">
+                                <span>PRIME</span>
+                                <span class="text-primary uppercase">Icon</span>
+                            </div>
+                        </div>
+
+                        <button type="button" command="close" commandfor="mobile-menu"
+                            class="p-2 border-2 border-black hover:bg-black hover:text-white transition-colors">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="size-6">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="mt-8 flow-root">
+                        <div class="space-y-4 font-black uppercase text-sm tracking-widest">
+
+                            <a href="./index.html" command="close" commandfor="mobile-menu"
+                                class="block w-full text-left py-4 px-2 border-b-2 border-transparent italic active:bg-primary active:text-white">Home</a>
+
+                            <a href="./aboutus.html" command="close" commandfor="mobile-menu"
+                                class="block w-full text-left py-4 px-2 border-b-2 border-transparent italic active:bg-primary active:text-white">About
+                                Us</a>
+
+                            <details class="group w-full">
+                                <summary
+                                    class="flex w-full items-center justify-between py-4 px-2 text-primary border-b-2 border-transparent hover:border-black group-open:border-black cursor-pointer list-none italic transition-all active:bg-primary active:text-white [&::-webkit-details-marker]:hidden">
+                                    <span>Explore</span>
+                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                        class="size-5 transition-transform duration-300 group-open:rotate-180">
+                                        <path fill-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </summary>
+
+                                <div class="border-2 border-black flex flex-col shadow-brutal-sm">
+                                    <a href="./event.html" command="close" commandfor="mobile-menu"
+                                        class="w-full text-left py-4 px-8 border-b-2 border-black/10 active:bg-primary active:text-white font-bold text-xs uppercase transition-colors">
+                                        Events & Programs
+                                    </a>
+                                    <a href="./activites.html" command="close" commandfor="mobile-menu"
+                                        class="w-full text-left py-4 px-8 bg-blue-700 text-white active:bg-primary active:text-white font-bold text-xs uppercase transition-colors">
+                                        Activities
+                                    </a>
+                                </div>
+                            </details>
+
+                            <a href="./dpt.html" command="close" commandfor="mobile-menu"
+                                class="block w-full text-left py-4 px-2 border-b-2 border-transparent hover:border-black hover:bg-gray-50 italic transition-all active:bg-primary active:text-white">Departments</a>
+                        </div>
+                    </div>
+
+                </el-dialog-panel>
+            </div>
+        </dialog>
+    </el-dialog>
+
+    <header class="text-center pt-32 pb-8 px-6">
+        <div class="relative inline-block w-full">
+            <h1
+                class="font-display2 text-6xl md:text-[10rem] tracking-tighter opacity-[0.04] absolute inset-0 flex items-center justify-center pointer-events-none select-none uppercase">
+                COLLECTED MEMORIES
+            </h1>
+            <p
+                class="font-handwritten text-4xl md:text-5xl text-blue-600 relative z-10 rotate-[-2deg] mb-2 reveal-item">
+                Our Moments
+                in Action</p>
+            <p class="font-bold text-[10px] uppercase tracking-[0.4em] text-zinc-400 reveal-item delay-200">Prime Icon
+                Activity Log // 2024 —
+                Ongoing</p>
+        </div>
+    </header>
+
+    <main class="memory-board reveal-item delay-400" id="board"></main>
+
+    <div class="film-strip" id="filmStrip"></div>
+
+    <footer class="py-24 px-8 text-center">
+        <div class="max-w-xl mx-auto reveal-item">
+            <p class="font-handwritten text-4xl text-zinc-500 mb-8">"This is just the beginning of our Trace."</p>
+            <p class="text-zinc-600 font-bold max-w-md mx-auto mb-10 leading-relaxed">
+                Every photo represents a person helped, a lesson learned, or a system improved.
+                We're building this story every single day.
+            </p>
+
+            <div class="relative inline-block reveal-item delay-200">
+                <div
+                    class="absolute -top-10 -left-10 w-20 h-20 bg-yellow-200 rounded-full flex items-center justify-center font-handwritten -rotate-12 border-2 border-black z-20 shadow-lg">
+                    Join Us!
+                </div>
+                <a href="" class="btn-guestbook uppercase text-2xl">Sign Guestbook</a>
+            </div>
+
+            <div class="mt-20 font-mono text-[10px] text-zinc-400 uppercase tracking-widest">
+                End of Roll // Prime Icon ©
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script type="module">
+        import { initActivities } from '../src/js/modules/activites.js';
+        initActivities();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Perspective Fan Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      perspective: 1500px;
+    }
+    .wheel-item {
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    .wheel-item > div {
+      transition: filter 0.5s ease;
+    }
+    .wheel-item:not(.active) a {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen antialiased">
+
+  <div class="relative w-80 bg-purple-600 text-white shadow-lg p-6 
+            rounded-tl-3xl rounded-br-2xl 
+            [clip-path:polygon(0_0,100%_0,100%_90%,85%_100%,0_100%)]">
+  
+  <!-- Floating icon (SVG) -->
+  <div class="absolute -top-6 -right-6 w-12 h-12">
+    <svg viewBox="0 0 24 24" fill="white">
+      <path d="M12 2L15 8H9L12 2ZM12 22L9 16H15L12 22ZM2 12L8 15V9L2 12ZM22 12L16 9V15L22 12Z"/>
+    </svg>
+  </div>
+
+  <!-- Heading -->
+  <h2 class="text-xl font-bold mb-2">Unusual Container</h2>
+  
+  <!-- Paragraph -->
+  <p class="text-sm opacity-90 mb-4">
+    This box mixes <span class="font-semibold">rounded corners</span>, 
+    a <span class="font-semibold">clip-path cut</span>, and a floating SVG decoration.
+  </p>
+
+  <!-- Button -->
+  <button class="bg-white text-purple-700 px-4 py-2 rounded-full shadow-md">
+    Learn More
+  </button>
+</div>
+
+  <div class="w-full max-w-7xl mx-auto p-4 flex flex-col items-center justify-center rounded-4xl">
+    <div id="carousel-container" class="relative overflow-hidden w-full flex items-center justify-center h-[450px] sm:h-[500px] md:h-[650px]">
+      <div id="wheel" class="w-full h-full relative transform-style-3d"></div>
+
+      <!-- Nav Buttons -->
+      <button id="prevBtn" class="absolute left-2 sm:left-4 md:left-12 lg:left-24 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center hover:bg-white/20 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="nextBtn" class="absolute right-2 sm:right-4 md:right-12 lg:right-24 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center hover:bg-white/20 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectData = [
+      { title: "AI-Powered Analytics Dashboard", description: "Enterprise-level ML dashboard.", imageUrl: "https://placehold.co/600x400/1a202c/ffffff?text=Project+A", projectUrl: "#" },
+      { title: "E-Commerce Platform Redesign", description: "UX/UI overhaul boosting conversions.", imageUrl: "https://placehold.co/600x400/2d3748/ffffff?text=Project+B", projectUrl: "#" },
+      { title: "Mobile Health & Fitness App", description: "Cross-platform health tracker app.", imageUrl: "https://placehold.co/600x400/4a5568/ffffff?text=Project+C", projectUrl: "#" },
+      { title: "Real-time Collaboration Tool", description: "Seamless doc + project collab tool.", imageUrl: "https://placehold.co/600x400/718096/ffffff?text=Project+D", projectUrl: "#" },
+      { title: "SaaS Inventory Management", description: "Cloud-based inventory system.", imageUrl: "https://placehold.co/600x400/a0aec0/ffffff?text=Project+E", projectUrl: "#" },
+      { title: "VR Architectural Visualization", description: "Immersive VR for architects.", imageUrl: "https://placehold.co/600x400/cbd5e0/000000?text=Project+F", projectUrl: "#" },
+      { title: "Another Awesome Project", description: "Modern web dev showcase.", imageUrl: "https://placehold.co/600x400/482d37/ffffff?text=Project+G", projectUrl: "#" },
+    ];
+
+    const wheel = document.getElementById('wheel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = Math.floor(projectData.length / 2);
+    const itemCount = projectData.length;
+
+    function createCardHTML(item) {
+      return `
+        <div class="max-w-[90vw] sm:max-w-xs bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden">
+          <a href="${item.projectUrl}">
+            <img class="rounded-t-lg object-cover h-32 sm:h-40 w-full" src="${item.imageUrl}" alt="${item.title}" />
+          </a>
+          <div class="p-3 sm:p-5">
+            <a href="${item.projectUrl}">
+              <h5 class="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-bold">${item.title}</h5>
+            </a>
+            <p class="mb-2 sm:mb-3 text-xs sm:text-sm text-gray-400">${item.description}</p>
+            <a href="${item.projectUrl}" class="inline-flex items-center px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800">
+              Read more
+              <svg class="ml-1 sm:ml-2 w-3 h-3 sm:w-3.5 sm:h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
+            </a>
+          </div>
+        </div>`;
+    }
+
+    function initCarousel() {
+      wheel.innerHTML = '';
+      projectData.forEach((itemData) => {
+        const itemEl = document.createElement('div');
+        itemEl.className = `wheel-item absolute w-full max-w-xs`;
+        itemEl.innerHTML = createCardHTML(itemData);
+        wheel.appendChild(itemEl);
+      });
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      const wheelContainer = document.getElementById('carousel-container');
+      const items = document.querySelectorAll('.wheel-item');
+
+      const width = wheelContainer.offsetWidth;
+      const height = wheelContainer.offsetHeight;
+
+      // Responsive tuning
+      const anglePerSlot = width < 640 ? 30 : width < 1024 ? 25 : 20;
+      const radiusX = width * 0.4;
+      const stageY = height * 0.55;
+      const perspectiveOffsetY = width < 640 ? 35 : 25;
+      const visibleRange = width < 640 ? 2 : 3;
+
+      items.forEach((item, i) => {
+        const itemContent = item.querySelector('div');
+        const diff = i - currentIndex;
+
+        const rotation = diff * anglePerSlot;
+        const x = (width / 2) + (radiusX * Math.sin(rotation * Math.PI / 180));
+        const y = stageY + Math.abs(diff) * perspectiveOffsetY;
+
+        let scale = 1 - Math.abs(diff) * 0.1;
+        let zIndex = itemCount - Math.abs(diff);
+        let opacity = 1;
+        let blur = `blur(${Math.abs(diff)}px)`;
+
+        item.classList.remove('active');
+        if (diff === 0) {
+          scale = 1.1;
+          blur = 'blur(0px)';
+          zIndex = itemCount + 1;
+          item.classList.add('active');
+        }
+
+        if (Math.abs(diff) > visibleRange) opacity = 0;
+
+        item.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+        itemContent.style.transformOrigin = 'bottom center';
+        itemContent.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+        item.style.zIndex = zIndex;
+        item.style.opacity = opacity;
+        itemContent.style.filter = blur;
+      });
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % itemCount;
+      updateCarousel();
+    }
+
+    function prevCard() {
+      currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+      updateCarousel();
+    }
+
+    // Button navigation
+    nextBtn.addEventListener('click', nextCard);
+    prevBtn.addEventListener('click', prevCard);
+
+    // Swipe support
+    let startX = 0;
+    let endX = 0;
+    const threshold = 50; // min distance for swipe
+
+    wheel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    wheel.addEventListener('touchmove', (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    wheel.addEventListener('touchend', () => {
+      if (startX - endX > threshold) {
+        nextCard(); // swipe left → next
+      } else if (endX - startX > threshold) {
+        prevCard(); // swipe right → prev
+      }
+      startX = endX = 0;
+    });
+
+    window.addEventListener('resize', () => setTimeout(updateCarousel, 100));
+    initCarousel();
+  });
+</script>
+</body>
+</html>
