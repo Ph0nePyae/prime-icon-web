@@ -98,10 +98,6 @@
 }
 
 @layer components {
-  .btn-blue {
-    --btn-color: var(--color-bg);
-    --text-color: var(--color-primary);
-  }
 
   .btn-orange {
     --btn-color: var(--color-accent);
@@ -116,6 +112,34 @@
   .btn-dark {
     --btn-color: var(--color-text);
     --text-color: var(--color-bg);
+  }
+
+  .btn-blue {
+    --btn-color: var(--color-bg); /*white*/
+    --text-color: var(--color-primary); /*blue*/
+    --bg-hover: var(--color-text);/*black*/
+  }
+
+  .btn-neoBlue {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: 3px solid var(--text-color);
+
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    box-shadow: 7px 7px 0px 0px var(--text-color, black);
+
+    &:hover {
+      background-color: var(--bg-hover);
+      color: #3889fa;
+      border: 3px solid var(--bg-hover);
+      transform: translate(3px, 3px);
+      box-shadow: 0px 0px 0px 0px var(--text-color, black);
+    }
   }
 
   .btn-neo {
@@ -139,9 +163,10 @@
     }
   }
 
+
   /* --- TENET GRID SYSTEM --- */
   .tenet-panel {
-    border: 4px solid black;
+    border: 4px solid var(--color-primary);
     padding: 2rem;
     position: relative;
     transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
@@ -152,7 +177,7 @@
   }
 
   .tenet-panel:hover .icon-box svg {
-    stroke: white;
+    stroke: #3889fa;
     transform: scale(1.1) rotate(-5deg);
   }
 
@@ -217,3 +242,113 @@
     background: currentColor;
   }
 }
+
+/* 
+
+<!-- Core Values -->
+      <section class="py-32 px-6 bg-white border-b-4 border-black">
+        <div class="max-w-7xl mx-auto">
+          <!-- Title Bar -->
+          <div class="flex items-center gap-4 mb-16 reveal-item">
+            <h2 class="font-display text-4xl md:text-7xl uppercase leading-none italic font-black">Our<span
+                class="text-primary"> Core Value</span></h2>
+            <div class="h-[4px] bg-black flex-grow"></div>
+          </div>
+
+          <!-- Tenet Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <!-- 01: RADICAL SPEED -->
+            <div class="md:col-span-7 tenet-panel btn-neoBlue btn-blue group reveal-item">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="mt-8">
+                <h3 class=" text-2xl md:text-3xl font-black mb-4 italic text-primary group-hover:text-indigo-600">
+                  Youth-Centered Leadership</h3>
+                <p class=" text-lg opacity-80 uppercase leading-tight font-bold max-w-xl">We empower young people to
+                  lead, take initiative, and drive meaningful change.</p>
+              </div>
+            </div>
+
+            <!-- 02: ABSOLUTE TRUST -->
+            <div class="md:col-span-5 tenet-panel btn-neo btn-white group reveal-item delay-100">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="mt-8">
+                <h3 class="text-2xl md:text-3xl font-black mb-4 italic text-primary group-hover:text-indigo-600">
+                  Innovation</h3>
+                <p class="text-lg opacity-70 uppercase leading-tight font-bold">We act with honesty and take
+                  responsibility, building trust through openness.</p>
+              </div>
+            </div>
+
+            <!-- 03: LIMITLESS SCALE -->
+            <div class="md:col-span-5 tenet-panel btn-neo btn-white group reveal-item">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5">
+                  <path
+                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <div class="mt-8">
+                <h3 class=" text-2xl md:text-3xl font-black mb-4 italic text-primary group-hover:text-indigo-600">Community well-being</h3>
+                <p class="text-lg opacity-70 uppercase leading-tight font-bold">We embrace new ideas and adapt quickly
+                  to create effective solutions.</p>
+              </div>
+            </div>
+
+            <!-- 04: ZERO COMPROMISE -->
+            <div class="md:col-span-7 tenet-panel btn-neo btn-white group reveal-item delay-100">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <div class="mt-8">
+                <h3 class=" text-2xl md:text-3xl font-black mb-4 italic text-primary group-hover:text-indigo-600">
+                  Inclusiveness</h3>
+                <p class="text-lg opacity-80 uppercase leading-tight font-bold">We respect all backgrounds and create an
+                  environment where everyone belongs.</p>
+              </div>
+            </div>
+
+            <!-- 05: DECENTRALIZED WILL -->
+            <div class="md:col-span-6 tenet-panel btn-neo btn-white group reveal-item">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                  </path>
+                </svg>
+              </div>
+              <div class="mt-8">
+                <h3 class=" text-2xl md:text-3xl font-black mb-4 italic text-primary group-hover:text-indigo-600">Diversity</h3>
+                <p class="text-lg opacity-70 uppercase leading-tight font-bold">We contribute positively to society and
+                  encourage active community engagement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+*/
