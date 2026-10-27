@@ -1,32 +1,33 @@
+import {renderFooter} from '../components/footer.js';
+
+// --- MOBILE MENU ---
 window.toggleMobileMenu = function () {
   document.getElementById("mobile-menu").classList.toggle("translate-x-full");
 };
 
-// Add to main.js - One observer to rule them all
+// --- GLOBAL REVEAL ANIMATION ---
 function initGlobalReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          observer.unobserve(entry.target); // Efficiency: stop watching once revealed
+          observer.unobserve(entry.target); 
         }
       });
     },
-    { threshold: 0.15 },
+    { threshold: 0.15 }
   );
 
-  document
-    .querySelectorAll(".reveal-item")
-    .forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal-item").forEach((el) => observer.observe(el));
 }
-window.addEventListener("DOMContentLoaded", initGlobalReveal);
 
-// SAFE ANIMATION BOOTUP
+// --- BOOTUP & COMPONENT LOADING ---
 window.addEventListener("DOMContentLoaded", () => {
+  renderFooter();
+  
   const overlay = document.getElementById("intro-overlay");
 
-  // ONLY run animation logic if the overlay actually exists in the HTML
   if (overlay) {
     const text = document.getElementById("intro-text");
     const line = document.getElementById("intro-line");
@@ -44,18 +45,15 @@ window.addEventListener("DOMContentLoaded", () => {
       }, 800);
     }, 2800);
   } else {
-    // If intro is commented out, just run the reveal logic immediately
     initGlobalReveal();
   }
 });
 
-
 // --- GLOBAL DATA STORE ---
-// This function caches the data so if it's called twice, it doesn't download again.
 let cachedData = null;
 
-async function getAppData() {
-    if (cachedData) return cachedData; // Return if already downloaded    
+window.getAppData = async function getAppData() {
+    if (cachedData) return cachedData;    
     try {
         const response = await fetch('./js/data.json');
         if (!response.ok) throw new Error("Data not found");
@@ -66,3 +64,4 @@ async function getAppData() {
         return null;
     }
 }
+

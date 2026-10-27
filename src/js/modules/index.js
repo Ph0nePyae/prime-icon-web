@@ -4,7 +4,7 @@ export async function initIndex() {
     await loadProjects();
     
     // 2. Load the AI Image
-    await loadAIImage();
+   //await loadAIImage();
 }
 
 async function loadProjects() {
