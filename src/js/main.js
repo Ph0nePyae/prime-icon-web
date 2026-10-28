@@ -6,7 +6,7 @@ window.toggleMobileMenu = function () {
 };
 
 // --- GLOBAL REVEAL ANIMATION ---
-function initGlobalReveal() {
+window.initGlobalReveal = function() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
