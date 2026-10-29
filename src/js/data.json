@@ -1,18 +1,18 @@
 {
   "teamData": [
     {
-      "name": "David Aris",
+      "name": "Zwe Bhone Htet",
       "role": "President & CEO",
       "bio": "Leading the structural redesign of global advocacy networks through data-driven methodology and community-first infrastructure.",
-      "img": "../photo/Austin.jpg",
+      "img": "../photo/iconPic/5.jpg",
       "tenure": "10 Years",
       "focus": "Global Strategy"
     },
     {
-      "name": "Sarah Vance",
+      "name": "Myo Hlaing Win",
       "role": "Programs Director",
       "bio": "Managing cross-border initiatives and ensuring educational resources reach decentralized communities effectively.",
-      "img": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800",
+      "img": "../photo/iconPic/1.jpg",
       "tenure": "8 Years",
       "focus": "Regional Impact"
     },
@@ -20,7 +20,7 @@
       "name": "Ken Thorne",
       "role": "Operations Manager",
       "bio": "Overseeing regional logistics and maintaining direct support lines with local field leads for rapid response.",
-      "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
+      "img": "../photo/iconPic/2.jpg",
       "tenure": "6 Years",
       "focus": "Field Operations"
     },
@@ -28,7 +28,7 @@
       "name": "Elena Rodriguez",
       "role": "Head of Partnerships",
       "bio": "Building the financial architecture and institutional alliances that sustain our long-term mission.",
-      "img": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800",
+      "img": "../photo/iconPic/3.jpg",
       "tenure": "5 Years",
       "focus": "Strategic Growth"
     },
@@ -36,7 +36,7 @@
       "name": "Marcus Chen",
       "role": "Tech Infrastructure",
       "bio": "Redefining the digital footprint of community movements through secure, accessible open-source platforms.",
-      "img": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800",
+      "img": "../photo/iconPic/4.jpg",
       "tenure": "4 Years",
       "focus": "Digital Rights"
     },
@@ -44,33 +44,9 @@
       "name": "Maya Patel",
       "role": "Policy Advisor",
       "bio": "Bridging the gap between ground-level activism and legislative policy through rigorous research and engagement.",
-      "img": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800",
+      "img": "../photo/iconPic/8.jpg",
       "tenure": "7 Years",
       "focus": "Legislative Reform"
-    },
-    {
-      "name": "James Wilson",
-      "role": "Creative Lead",
-      "bio": "Visualizing the narrative of change through impactful design and storytelling across all digital mediums.",
-      "img": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800",
-      "tenure": "3 Years",
-      "focus": "Visual Identity"
-    },
-    {
-      "name": "Sophie Lin",
-      "role": "Lead Researcher",
-      "bio": "Sophie drives our evidence-based approach, ensuring every initiative is backed by high-fidelity community data.",
-      "img": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800",
-      "tenure": "4 Years",
-      "focus": "Impact Analysis"
-    },
-    {
-      "name": "Aiden Blake",
-      "role": "Community Liaison",
-      "bio": "Building direct bridges between technical solutions and the people they serve for cultural relevance.",
-      "img": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800",
-      "tenure": "5 Years",
-      "focus": "Advocacy Outreach"
     }
   ],
   "departments": [

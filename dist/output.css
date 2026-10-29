@@ -1,5 +1,5 @@
 /*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@300;700;900&family=Bungee&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
@@ -17,8 +17,6 @@
     --color-yellow-200: oklch(94.5% 0.129 101.54);
     --color-yellow-300: oklch(90.5% 0.182 98.111);
     --color-lime-400: oklch(84.1% 0.238 128.85);
-    --color-lime-500: oklch(76.8% 0.233 130.85);
-    --color-lime-600: oklch(64.8% 0.2 131.684);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-blue-50: oklch(97% 0.014 254.604);
     --color-blue-400: oklch(70.7% 0.165 254.624);
@@ -94,6 +92,7 @@
     --tracking-tighter: -0.05em;
     --tracking-tight: -0.025em;
     --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
     --leading-tight: 1.25;
     --leading-snug: 1.375;
@@ -114,7 +113,7 @@
     --color-accent: #f98129;
     --color-bg: #f8fafc;
     --color-text: #0f172a;
-    --font-display: "Orbitron", system-ui, sans-serif;
+    --font-display: "Fredoka", system-ui, sans-serif;
   }
 }
 @layer base {
@@ -839,6 +838,23 @@
       margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
+  .space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .space-x-4 {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
@@ -1088,9 +1104,6 @@
   .bg-gray-900 {
     background-color: var(--color-gray-900);
   }
-  .bg-lime-400 {
-    background-color: var(--color-lime-400);
-  }
   .bg-orange-400 {
     background-color: var(--color-orange-400);
   }
@@ -1298,6 +1311,9 @@
   .pt-48 {
     padding-top: calc(var(--spacing) * 48);
   }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
   .pr-3 {
     padding-right: calc(var(--spacing) * 3);
   }
@@ -1460,6 +1476,14 @@
     --tw-tracking: 0.4em;
     letter-spacing: 0.4em;
   }
+  .tracking-\[0\.15em\] {
+    --tw-tracking: 0.15em;
+    letter-spacing: 0.15em;
+  }
+  .tracking-\[0\.075em\] {
+    --tw-tracking: 0.075em;
+    letter-spacing: 0.075em;
+  }
   .tracking-tight {
     --tw-tracking: var(--tracking-tight);
     letter-spacing: var(--tracking-tight);
@@ -1471,6 +1495,10 @@
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
   }
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
@@ -1523,12 +1551,6 @@
   }
   .text-gray-900 {
     color: var(--color-gray-900);
-  }
-  .text-lime-400 {
-    color: var(--color-lime-400);
-  }
-  .text-lime-600 {
-    color: var(--color-lime-600);
   }
   .text-primary {
     color: var(--color-primary);
@@ -2045,13 +2067,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-50);
-      }
-    }
-  }
-  .hover\:bg-lime-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-lime-500);
       }
     }
   }

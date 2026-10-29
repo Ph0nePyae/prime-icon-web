@@ -13,61 +13,55 @@
 
     <!-- 2. NAVBAR -->
     <header class="fixed top-0 w-full bg-white z-50 border-b-3 border-black glass-nav">
-        <nav class="max-w-[1440px] mx-auto pe-2 lg:px-0 h-20 flex items-center justify-between">
+    <nav class="max-w-[1440px] mx-auto pe-2 lg:px-0 h-20 flex items-center justify-between">
 
-            <a href="./index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 ms-3 bg-black flex items-center justify-center -rotate-12">
-                    <span class="text-white font-system font-black text-lg">P</span>
-                </div>
-                <div class="flex items-center gap-1 font-system font-black text-xl tracking-tighter">
-                    <span class="hover:text-orange-500">PRIME</span>
-                    <span class="text-primary">ICON</span>
-                </div>
-            </a>
+      <a href="./index.html" class="flex items-center gap-2 group">
+        <img src="../photo/P.I_LOGO_full_color.png" alt="Prime Icon Logo" class="w-16 h-16 object-cover">
+      </a>
 
-            <div class="flex items-center space-x-4 lg:space-x-8">
+      <div class="flex items-center space-x-4 lg:space-x-8">
 
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="./index.html" class="nav-link">Home</a>
-                    <a href="./aboutus.html" class="nav-link">About Us</a>
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./aboutus.html" class="nav-link">About Us</a>
 
-                    <div class="relative dropdown group">
-                        <button class="nav-link flex items-center py-7 text-primary">
-                            Explore
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 9l-7 7-7-7" stroke-width="3" />
-                            </svg>
-                        </button>
-                        <div
-                            class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white brutalist-border min-w-[220px] shadow-brutal-sm">
-                            <a href="./event.html"
-                                class="block w-full text-left px-6 py-4 border-b-2 border-black hover:bg-blue-700 hover:text-white font-bold uppercase text-xs">Events
-                                & Programs</a>
-                            <a href="./activites.html"
-                                class="block w-full text-left px-6 py-4 bg-blue-700 text-white font-bold uppercase text-xs">Activities</a>
-                        </div>
-                    </div>
-
-                    <a href="./dpt.html" class="nav-link">Departments</a>
-                </div>
-
-                <button onclick="router.navigate('contact')"
-                    class="font-black font uppercase border-3 border-black text-text bg-accent shadow-brutal-sm rounded-md !py-2 !px-4 md:!px-6 text-[11px] lg:!text-xs whitespace-nowrap hover:-translate-1 transition-all duration-200 ease-in-out">
-                    Contact Us
-                </button>
-
-                <div class="flex lg:hidden">
-                    <button type="button" command="show-modal" commandfor="mobile-menu"
-                        class="inline-flex rounded-md text-gray-700">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="3" />
-                        </svg>
-                    </button>
-                </div>
-
+          <div class="relative dropdown group">
+            <button class="nav-link flex items-center py-7 text-primary">
+              Explore
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" stroke-width="3" />
+              </svg>
+            </button>
+            <div
+              class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white brutalist-border min-w-[220px] shadow-brutal-sm">
+              <a href="./event.html"
+                class="block w-full text-left px-6 py-4 border-b-2 border-black hover:bg-blue-700 hover:text-white font-bold uppercase text-xs">Events
+                & Programs</a>
+              <a href="./activites.html"
+                class="block w-full text-left px-6 py-4 bg-blue-700 text-white font-bold uppercase text-xs">Activities</a>
             </div>
-        </nav>
-    </header>
+          </div>
+
+          <a href="./dpt.html" class="nav-link">Departments</a>
+        </div>
+
+        <button onclick="router.navigate('contact')"
+          class="font-black font uppercase border-3 border-black text-text bg-accent shadow-brutal-sm rounded-md !py-2 !px-4 md:!px-6 text-[11px] lg:!text-xs whitespace-nowrap hover:-translate-1 transition-all duration-200 ease-in-out">
+          Contact Us
+        </button>
+
+        <div class="flex lg:hidden">
+          <button type="button" command="show-modal" commandfor="mobile-menu"
+            class="inline-flex rounded-md text-gray-700">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="3" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+  </header>
 
 
     <!-- Nav Mobile view -->
