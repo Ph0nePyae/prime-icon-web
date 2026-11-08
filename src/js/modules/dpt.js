@@ -1,5 +1,5 @@
-const createRoleCard = (role, isDark, titleColor, btnHover) => `
-    <div class="${isDark ? "role-card-dark" : "role-card"} p-6 bg-white text-black flex flex-col justify-between h-full">
+const createRoleCard = (role, titleColor, btnHover) => `
+    <div class="${"role-card"} p-6 bg-white text-black flex flex-col justify-between h-full">
         <div>
             <h4 class="font-black ${titleColor} uppercase text-sm mb-2 tracking-widest">${role.title}</h4>
             <p class="text-xs font-bold mb-6 text-zinc-500 leading-relaxed">${role.task}</p>
@@ -20,28 +20,26 @@ const createDepartmentHTML = (dept, index) => {
   const isEven = index % 2 === 0;
   // STRICT COLOR LOGIC
   // Only InnoTech (bg-black) gets the white border treatment
-  const isBlackBg = dept.bg === "bg-black";
-  const borderClass = isBlackBg ? "border-lime-400" : "border-black";
+ // const isBlackBg = dept.bg === "bg-black";
+ // const borderClass = isBlackBg ? "border-lime-400" : "border-black";
+    const borderClass = "border-black";
 
   // Shadow Logic: Use the shadow defined in the data,
   // or fall back to white ONLY for black backgrounds.
-  const shadowClass = dept.shadow
+  /*const shadowClass = dept.shadow
     ? dept.shadow
     : isBlackBg
       ? "brutal-shadow-lime"
-      : "brutal-shadow-black";
+      : "brutal-shadow-black";*/
+    const shadowClass = dept.shadow ? dept.shadow : "brutal-shadow-black";
 
   //theme
   const theme = {
-    roleTitle: isBlackBg ? "text-lime-600" : "text-blue-600",
+    roleTitle: "text-blue-600",
     // Make sure these classes exist in your CSS!
-    cardShadow: isBlackBg
-      ? "brutal-shadow-lime"
-      : dept.shadow || "brutal-shadow-black",
-    border: isBlackBg ? "border-lime-400" : "border-black",
-    btnHover: isBlackBg
-      ? "hover:bg-lime-500 hover:text-black"
-      : "hover:bg-blue-600 hover:text-white",
+    cardShadow: dept.shadow || "brutal-shadow-black",
+    border: "border-black",
+    btnHover: "hover:bg-blue-600 hover:text-white",
   };
 
   // Logic: If there are teams, map them. If no teams but direct roles exist, treat as one "Direct Opportunity" team.
@@ -108,7 +106,7 @@ const createDepartmentHTML = (dept, index) => {
                                   team.isRecruiting && team.roles?.length > 0
                                     ? `
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                        ${team.roles.map((role) => createRoleCard(role, isBlackBg, theme.roleTitle, theme.btnHover)).join("")}
+                                        ${team.roles.map((role) => createRoleCard(role, theme.roleTitle, theme.btnHover)).join("")}
                                     </div>
                                 `
                                     : createPlaceholder()
@@ -130,24 +128,20 @@ const createDepartmentHTML = (dept, index) => {
 let departments = [];
 export async function initDepartments() {
   try {
-    const data = await getAppData();
+    const data = await window.getAppData();
     if (!data || !data.departments) return;
 
-    const departments = data.departments;
     const root = document.getElementById("departments-root");
-
     if (!root) return;
 
-    // 2. Inject the HTML
-    root.innerHTML = departments.map(createDepartmentHTML).join("");
-    // 2. TRIGGER THE REVEAL HERE
-    // Since the items now exist in the DOM, we run the observer again
-    if (typeof initGlobalReveal === "function") {
-      initGlobalReveal();
+    // 1. Inject the HTML into the DOM
+    root.innerHTML = data.departments.map(createDepartmentHTML).join("");
+
+    // 2. Immediately tell the observer to scan the newly created elements!
+    if (typeof window.initGlobalReveal === "function") {
+      window.initGlobalReveal();
     }
   } catch (error) {
     console.error("Initialization failed:", error);
   }
 }
-
-document.addEventListener("DOMContentLoaded", initDepartments);
